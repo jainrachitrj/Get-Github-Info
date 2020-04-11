@@ -7,7 +7,7 @@ const OAuthClientSecret = process.env.Client_Secret;
 const express = require("express");
 const app = express();
 const request = require("request");
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.use(express.static("./Frontend"));
