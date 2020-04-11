@@ -1,0 +1,255 @@
+@import "./resets";
+@import "./maps";
+@import "./functions";
+@import "./mixins";
+
+.auth-status {
+  color: getColorFromMap($colors, "light-gray");
+  font-size: 14px;
+  font-weight: 500;
+  margin: 10px 0;
+  text-align: center;
+}
+.overlay {
+  position: fixed;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: getColorFromMap($colors, "overlay-color");
+  transition: all 0.25s ease-in-out;
+}
+.overlay-show {
+  opacity: 1;
+  pointer-events: all;
+}
+h2 {
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.alert-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  padding: 20px;
+  min-height: 100px;
+  min-width: 300px;
+  border: 2px solid rgba(245, 236, 236, 0.08);
+  border-radius: 7px;
+  transition: all 0.4s ease-in-out;
+  @include flex(center, center, column);
+  background: getColorFromMap($colors, "lightish-blue");
+}
+.alert-box-toggle {
+  opacity: 1;
+  transform: translate(-50%, -50%) scaleY(1);
+  pointer-events: all;
+}
+.alert-msg {
+  font-size: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0e153a;
+}
+.clone,
+.see-commits {
+  text-decoration: none;
+  padding: 12px 20px;
+  margin: 20px 20px 0;
+  width: 150px;
+  font-size: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+}
+.clone {
+  background: getColorFromMap($colors, "creamish-color");
+  color: black;
+}
+.see-commits {
+  cursor: pointer;
+  background: none;
+  color: black;
+  border: 1px solid getColorFromMap($colors, "light-gray");
+}
+.ok-btn {
+  font-size: 13.5px;
+  color: getColorFromMap($colors, "dark-gray");
+  cursor: pointer;
+}
+.commits-box {
+  position: relative;
+  opacity: 1;
+  margin: 20px 0;
+  pointer-events: all;
+  padding: 20px 20px 20px 40px;
+  min-width: 500px;
+  max-width: 700px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.04), -3px -3px 5px rgba(0, 0, 0, 0.04);
+  border: 2px solid rgba(235, 235, 235, 0.6);
+  border-radius: 7px;
+  transition: all 0.4s ease-in-out;
+  @include flex(center, center, column);
+  .close-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  ol {
+    li {
+      font-size: 14px;
+      margin: 0.6em 0;
+      padding-left: 5px;
+    }
+  }
+}
+.spinner {
+  width: 50px;
+  animation: spin 2s linear infinite;
+  path {
+    fill: getColorFromMap($colors, "primary");
+  }
+}
+.heading {
+  font-size: 30px;
+  margin: 20px 0 0;
+  text-align: center;
+  span {
+    color: getColorFromMap($colors, "primary");
+  }
+}
+#username {
+  padding: 10px 15px;
+  border-radius: 7px;
+  margin: 30px 0;
+  width: 500px;
+  border: 1.5px solid getColorFromMap($colors, "secondary");
+  transition: border 0.3s ease-in-out;
+  &:hover,
+  &:focus {
+    border-color: getColorFromMap($colors, "hover-color");
+  }
+}
+#get-repo-btn {
+  background-color: getColorFromMap($colors, "primary");
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: getColorFromMap($colors, "hover-color");
+  }
+}
+.repos-list {
+  list-style: none;
+  margin: 20px auto;
+  @include flex(center, flex-start);
+  flex-wrap: wrap;
+  .card {
+    margin: 20px 10px;
+    padding: 20px;
+    background-color: getColorFromMap($colors, "accent-color");
+    border-radius: 7px;
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 180px;
+    position: relative;
+    @include flex(center, center, column);
+    transition: all 0.3s ease-in-out;
+    border: 2px solid rgba(172, 167, 167, 0.08);
+    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.02),
+      -7px -7px 5px rgba(0, 0, 0, 0.02);
+    a {
+      position: relative;
+      font-weight: 500;
+      text-decoration: none;
+      color: black;
+      transition: all 0.3s ease-in-out;
+      @include flex(center, centetr);
+      margin-bottom: 10px;
+      svg {
+        width: 15px;
+        margin: 0 5px;
+        transition: all 0.3s ease-in-out;
+        path {
+          fill: black;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+      &:hover {
+        svg {
+          transform: translate(6px, -5px);
+          path {
+            fill: getColorFromMap($colors, "primary");
+          }
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        height: 90%;
+        width: 3px;
+        transform: translate(0, -50%);
+        background-color: getColorFromMap($colors, "primary");
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    p {
+      font-size: 13px;
+      color: getColorFromMap($colors, "light-gray");
+    }
+    .language {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 14px;
+      color: getColorFromMap($colors, "primary");
+    }
+    .see-info {
+      padding: 0.85em 2.4em;
+      margin: 20px 0 0;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      @include flex(center, center);
+      svg {
+        width: 18px;
+        margin: 0 5px;
+      }
+    }
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}

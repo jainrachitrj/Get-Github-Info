@@ -1,0 +1,15 @@
+@import "./index";
+@import "./main-page";
+@import "./authenticate";
+@import "./resets";
+@import "./maps";
+@import "./functions";
+@import "./mixins";
+
+body {
+  @include flex(flex-start, center, column);
+  width: 100%;
+  min-height: 100vh;
+  padding: 5em 2em 4em;
+}
+@import "./responsive";

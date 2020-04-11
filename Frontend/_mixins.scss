@@ -1,0 +1,31 @@
+//Flexbox mixin
+
+@mixin flex($justify, $align, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+//Media query mixins
+
+$tablet: 768px;
+@mixin tablet {
+  @media screen and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+$largeMobile: 580px;
+@mixin largeMobile {
+  @media screen and (max-width: #{$largeMobile}) {
+    @content;
+  }
+}
+
+$mobile: 400px;
+@mixin mobile {
+  @media screen and (max-width: #{$mobile}) {
+    @content;
+  }
+}

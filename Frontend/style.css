@@ -1,0 +1,664 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+body .container {
+  width: 60%;
+  padding: 20px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .container .desc-text {
+  color: black;
+  font-size: 17px;
+  margin: 20px 0;
+}
+
+body .container .auth-text {
+  font-size: 15px;
+  color: #747171;
+  margin: 5px 0;
+}
+
+body .container a {
+  font-size: 16px;
+  color: #1f3fce;
+  text-decoration: none;
+  margin: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+body .container a .arrow {
+  margin: 0 5px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+body .container a:hover .arrow {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+body .container .authorize {
+  margin: 15px 0 10px;
+  color: white;
+  border: 2px solid #1f3fce;
+  background-color: #1f3fce;
+  padding: 12px 20px;
+  border-radius: 7px;
+  font-weight: 500;
+}
+
+body .container .authorize:hover {
+  background: #102686;
+  border-color: #102686;
+}
+
+body .container .no-authorize:hover {
+  color: #102686;
+}
+
+body .container .or {
+  color: #a8a3a3b2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.auth-status {
+  color: #747171;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.overlay-show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+h2 {
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.alert-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scaleY(0);
+          transform: translate(-50%, -50%) scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  padding: 20px;
+  min-height: 100px;
+  min-width: 300px;
+  border: 2px solid rgba(245, 236, 236, 0.08);
+  border-radius: 7px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #e2f3f5;
+}
+
+.alert-box-toggle {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scaleY(1);
+          transform: translate(-50%, -50%) scaleY(1);
+  pointer-events: all;
+}
+
+.alert-msg {
+  font-size: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0e153a;
+}
+
+.clone,
+.see-commits {
+  text-decoration: none;
+  padding: 12px 20px;
+  margin: 20px 20px 0;
+  width: 150px;
+  font-size: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+}
+
+.clone {
+  background: #f3f169;
+  color: black;
+}
+
+.see-commits {
+  cursor: pointer;
+  background: none;
+  color: black;
+  border: 1px solid #747171;
+}
+
+.ok-btn {
+  font-size: 13.5px;
+  color: #3a3a3a;
+  cursor: pointer;
+}
+
+.commits-box {
+  position: relative;
+  opacity: 1;
+  margin: 20px 0;
+  pointer-events: all;
+  padding: 20px 20px 20px 40px;
+  min-width: 500px;
+  max-width: 700px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.04), -3px -3px 5px rgba(0, 0, 0, 0.04);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.04), -3px -3px 5px rgba(0, 0, 0, 0.04);
+  border: 2px solid rgba(235, 235, 235, 0.6);
+  border-radius: 7px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.commits-box .close-btn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.commits-box ol li {
+  font-size: 14px;
+  margin: 0.6em 0;
+  padding-left: 5px;
+}
+
+.spinner {
+  width: 50px;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+
+.spinner path {
+  fill: #1f3fce;
+}
+
+.heading {
+  font-size: 30px;
+  margin: 20px 0 0;
+  text-align: center;
+}
+
+.heading span {
+  color: #1f3fce;
+}
+
+#username {
+  padding: 10px 15px;
+  border-radius: 7px;
+  margin: 30px 0;
+  width: 500px;
+  border: 1.5px solid #a8a3a3b2;
+  -webkit-transition: border 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
+}
+
+#username:hover, #username:focus {
+  border-color: #1f97ce;
+}
+
+#get-repo-btn {
+  background-color: #1f3fce;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#get-repo-btn:hover {
+  background-color: #1f97ce;
+}
+
+.repos-list {
+  list-style: none;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.repos-list .card {
+  margin: 20px 10px;
+  padding: 20px;
+  background-color: #fff6bb;
+  border-radius: 7px;
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 180px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid rgba(172, 167, 167, 0.08);
+  -webkit-box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.02), -7px -7px 5px rgba(0, 0, 0, 0.02);
+          box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.02), -7px -7px 5px rgba(0, 0, 0, 0.02);
+}
+
+.repos-list .card a {
+  position: relative;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: centetr;
+      -ms-flex-align: centetr;
+          align-items: centetr;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.repos-list .card a svg {
+  width: 15px;
+  margin: 0 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.repos-list .card a svg path {
+  fill: black;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.repos-list .card a:hover svg {
+  -webkit-transform: translate(6px, -5px);
+          transform: translate(6px, -5px);
+}
+
+.repos-list .card a:hover svg path {
+  fill: #1f3fce;
+}
+
+.repos-list .card a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  height: 90%;
+  width: 3px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  background-color: #1f3fce;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.repos-list .card p {
+  font-size: 13px;
+  color: #747171;
+}
+
+.repos-list .card .language {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 14px;
+  color: #1f3fce;
+}
+
+.repos-list .card .see-info {
+  padding: 0.85em 2.4em;
+  margin: 20px 0 0;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.repos-list .card .see-info svg {
+  width: 18px;
+  margin: 0 5px;
+}
+
+.repos-list .card:hover {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+.dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+}
+
+.dots .dot {
+  margin: 0 0.5em;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  animation: jump 0.75s ease-in-out infinite alternate-reverse;
+}
+
+.dots .dot:nth-of-type(1) {
+  -webkit-animation-delay: -0.25s;
+          animation-delay: -0.25s;
+}
+
+.dots .dot:nth-of-type(2) {
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+.dots .dot:nth-of-type(3) {
+  -webkit-animation-delay: -0.75s;
+          animation-delay: -0.75s;
+}
+
+.redirect-head {
+  font-size: 25px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@-webkit-keyframes jump {
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+
+@keyframes jump {
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: 5em 2em 4em;
+}
+
+@media screen and (max-width: 400px) {
+  body .main-head {
+    font-size: 1.7em;
+    letter-spacing: 0;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  body .redirect-head {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body .redirect-head {
+    font-size: 19px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body .container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  body .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    padding: 5em 10px 4em;
+  }
+  body .container a {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body #username {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body .heading {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body .repos-list .card {
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body .repos-list .card {
+    min-width: 300px;
+    padding: 20px 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body .alert-box {
+    padding: 20px 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body .commits-box {
+    min-width: 90%;
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  body .commits-box {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body .commits-box {
+    padding-left: 30px;
+  }
+  body .commits-box ol li {
+    list-style-type: disc;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,63 @@
+@import "./resets";
+@import "./maps";
+@import "./mixins";
+@import "./functions";
+
+body {
+  .container {
+    width: 60%;
+    padding: 20px;
+    height: 100%;
+    @include flex(flex-start, center, column);
+    .desc-text {
+      color: black;
+      font-size: 17px;
+      margin: 20px 0;
+    }
+    .auth-text {
+      font-size: 15px;
+      color: getColorFromMap($colors, "light-gray");
+      margin: 5px 0;
+    }
+    a {
+      font-size: 16px;
+      color: getColorFromMap($colors, "primary");
+      text-decoration: none;
+      margin: 5px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease-in-out;
+      .arrow {
+        margin: 0 5px;
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover {
+        .arrow {
+          transform: translateX(5px);
+        }
+      }
+    }
+    .authorize {
+      margin: 15px 0 10px;
+      color: white;
+      border: 2px solid getColorFromMap($colors, "primary");
+      background-color: getColorFromMap($colors, "primary");
+      padding: 12px 20px;
+      border-radius: 7px;
+      font-weight: 500;
+      &:hover {
+        background: getColorFromMap($colors, "hover-color-dark");
+        border-color: getColorFromMap($colors, "hover-color-dark");
+      }
+    }
+    .no-authorize {
+      &:hover {
+        color: getColorFromMap($colors, "hover-color-dark");
+      }
+    }
+    .or {
+      color: getColorFromMap($colors, "secondary");
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import "./maps";
+@import "./mixins";
+@import "./functions";
+
+body {
+  .main-head {
+    @include mobile {
+      font-size: 1.7em;
+      letter-spacing: 0;
+    }
+  }
+  .redirect-head {
+    @include largeMobile {
+      font-size: 22px;
+    }
+    @include mobile {
+      font-size: 19px;
+    }
+  }
+  .container {
+    @include tablet {
+      width: 80%;
+    }
+    @include largeMobile {
+      width: 100%;
+    }
+  }
+  @include mobile {
+    padding: 5em 10px 4em;
+    .container a {
+      font-size: 15px;
+    }
+  }
+  #username {
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+  .heading {
+    @include mobile {
+      font-size: 25px;
+    }
+  }
+  .repos-list {
+    .card {
+      @include tablet {
+        margin: 20px 0;
+      }
+      @include mobile {
+        min-width: 300px;
+        padding: 20px 10px;
+      }
+    }
+  }
+  .alert-box {
+    @include mobile {
+      padding: 20px 10px;
+    }
+  }
+  .commits-box {
+    @include tablet {
+      min-width: 90%;
+      max-width: 90%;
+    }
+    @include largeMobile {
+      min-width: 100%;
+      max-width: 100%;
+    }
+    @include mobile {
+      padding-left: 30px;
+      ol li {
+        list-style-type: disc;
+      }
+    }
+  }
+}

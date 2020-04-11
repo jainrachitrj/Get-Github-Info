@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Github Info</title>
+    <link rel="shortcut icon" href="./icon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <h1 class="redirect-head">
+      You will be redirected to github.com for authentication
+    </h1>
+    <script>
+      const clientId = <%- JSON.stringify(OAuthClientId) %>;
+      const url = `https://github.com/login/oauth/authorize?scope=user:email&client_id=${clientId}`;
+      function redirect() {
+        window.location = url;
+      }
+      setTimeout(redirect, 2500);
+    </script>
+  </body>
+</html>
