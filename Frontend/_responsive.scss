@@ -3,6 +3,40 @@
 @import "./functions";
 
 body {
+  .authenticate-body {
+    @include largeTablet {
+      min-height: 550px;
+      flex-direction: column;
+      clip-path: polygon(50% 0%, 100% 15%, 100% 100%, 50% 100%, 0 85%, 0 0);
+      .left-col {
+        margin: 20px 0;
+        .dots {
+          .dot {
+            width: 15px;
+            height: 15px;
+          }
+        }
+        .redirect-head {
+          font-size: 20px;
+        }
+      }
+      .right-col {
+        margin: 20px 0;
+      }
+    }
+    @include mobile {
+      padding: 10px;
+      .left-col {
+        .redirect-head {
+          font-size: 18px;
+        }
+      }
+      .right-col {
+        max-width: 300px;
+        min-width: 200px;
+      }
+    }
+  }
   .main-head {
     @include mobile {
       font-size: 1.7em;

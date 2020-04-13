@@ -9,6 +9,13 @@
 
 //Media query mixins
 
+$largeTablet: 810px;
+@mixin largeTablet {
+  @media screen and (max-width: #{$largeTablet}) {
+    @content;
+  }
+}
+
 $tablet: 768px;
 @mixin tablet {
   @media screen and (max-width: #{$tablet}) {

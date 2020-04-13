@@ -105,6 +105,119 @@ body .container .or {
   font-weight: 500;
   margin: 10px 0;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.auth-status svg {
+  width: 15px;
+  margin: 0 8px;
+}
+
+.auth-status svg path {
+  fill: #1aa71a;
+}
+
+.move-up {
+  position: fixed;
+  cursor: pointer;
+  bottom: 20px;
+  right: 30px;
+  padding: 10px 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #1f3fce;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.move-up svg {
+  height: 20px;
+}
+
+.move-up svg path {
+  fill: white;
+}
+
+.move-up:hover {
+  background-color: #1f97ce;
+}
+
+.home-link {
+  position: fixed;
+  z-index: 5;
+  background: white;
+  padding: 10px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.home-link svg {
+  width: 12px;
+  margin: 0 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-link svg path {
+  fill: black;
+}
+
+.home-link a {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-link:hover svg {
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
+}
+
+.home-link:hover svg path {
+  fill: #1f3fce;
+}
+
+.home-link:hover a {
+  color: #1f3fce;
 }
 
 .overlay {
@@ -248,10 +361,26 @@ h2 {
   cursor: pointer;
 }
 
+.commits-box .see-more-commits {
+  color: #1f3fce;
+  margin: 20px 0;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.commits-box ol {
+  max-width: 100%;
+}
+
 .commits-box ol li {
   font-size: 14px;
   margin: 0.6em 0;
   padding-left: 5px;
+}
+
+.commits-box ol li * {
+  font-size: 14px;
+  font-weight: normal;
 }
 
 .spinner {
@@ -483,7 +612,41 @@ h2 {
   }
 }
 
-.dots {
+.authenticate-entire-body {
+  padding: 0;
+}
+
+.authenticate-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 10px 25px;
+  min-width: 100%;
+  min-height: 600px;
+  height: 100vh;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 46% 100%, 0 76%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 46% 100%, 0 76%);
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 50% 100%, 0% 75%, 0 0);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 50% 100%, 0% 75%, 0 0);
+  background-image: -webkit-gradient(linear, right top, left top, from(#ffecd2), to(#fcb69f));
+  background-image: linear-gradient(to left, #ffecd2 0%, #fcb69f 100%);
+}
+
+.authenticate-body .left-col {
+  margin: 0 20px;
+}
+
+.authenticate-body .left-col .dots {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -496,34 +659,59 @@ h2 {
   margin: 20px 0;
 }
 
-.dots .dot {
+.authenticate-body .left-col .dots .dot {
   margin: 0 0.5em;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: black;
+  background-color: #3a3a3a;
   animation: jump 0.75s ease-in-out infinite alternate-reverse;
 }
 
-.dots .dot:nth-of-type(1) {
+.authenticate-body .left-col .dots .dot:nth-of-type(1) {
   -webkit-animation-delay: -0.25s;
           animation-delay: -0.25s;
 }
 
-.dots .dot:nth-of-type(2) {
+.authenticate-body .left-col .dots .dot:nth-of-type(2) {
   -webkit-animation-delay: -0.5s;
           animation-delay: -0.5s;
 }
 
-.dots .dot:nth-of-type(3) {
+.authenticate-body .left-col .dots .dot:nth-of-type(3) {
   -webkit-animation-delay: -0.75s;
           animation-delay: -0.75s;
 }
 
-.redirect-head {
+.authenticate-body .left-col .redirect-head {
   font-size: 25px;
   margin: 20px 0;
   text-align: center;
+  color: #3a3a3a;
+}
+
+.authenticate-body .right-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 40%;
+  max-width: 350px;
+  min-width: 270px;
+  margin: 0 20px;
+}
+
+.authenticate-body .right-col svg {
+  width: 100%;
 }
 
 @-webkit-keyframes jump {
@@ -566,6 +754,44 @@ body {
   width: 100%;
   min-height: 100vh;
   padding: 5em 2em 4em;
+}
+
+@media screen and (max-width: 810px) {
+  body .authenticate-body {
+    min-height: 550px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-clip-path: polygon(50% 0%, 100% 15%, 100% 100%, 50% 100%, 0 85%, 0 0);
+            clip-path: polygon(50% 0%, 100% 15%, 100% 100%, 50% 100%, 0 85%, 0 0);
+  }
+  body .authenticate-body .left-col {
+    margin: 20px 0;
+  }
+  body .authenticate-body .left-col .dots .dot {
+    width: 15px;
+    height: 15px;
+  }
+  body .authenticate-body .left-col .redirect-head {
+    font-size: 20px;
+  }
+  body .authenticate-body .right-col {
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body .authenticate-body {
+    padding: 10px;
+  }
+  body .authenticate-body .left-col .redirect-head {
+    font-size: 18px;
+  }
+  body .authenticate-body .right-col {
+    max-width: 300px;
+    min-width: 200px;
+  }
 }
 
 @media screen and (max-width: 400px) {

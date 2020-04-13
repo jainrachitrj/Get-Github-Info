@@ -14,12 +14,15 @@ app.use(express.static("./Frontend"));
 
 let authenticated = false;
 let accessToken;
+
 app.get("/", (req, res) => {
   res.render("index.ejs");
 });
+
 app.get("/authenticate", (req, res) => {
   res.render("authenticate.ejs", { OAuthClientId });
 });
+
 app.get("/main-page-authenticated", (req, res) => {
   const code = req.query.code;
   if (!authenticated) {
